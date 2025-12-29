@@ -1,8 +1,6 @@
 import os, dotenv
 from langchain_community.chat_models import ChatZhipuAI,zhipuai
 from langchain_openai import ChatOpenAI,OpenAI
-from langchain.schema import HumanMessage, SystemMessage
-from langchain_core.messages import HumanMessage,SystemMessage,AIMessage
 
 
 dotenv.load_dotenv()  # 加载 .env配置文件，从配置文件中读取 api_key 等信息
