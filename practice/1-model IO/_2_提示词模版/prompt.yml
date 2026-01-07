@@ -1,0 +1,6 @@
+_type:
+  "prompt"
+template:
+  "请给{name}讲一个{category}的故事"
+input_variables:
+  [ "name","category" ]

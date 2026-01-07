@@ -10,7 +10,10 @@
 
 			d. XxxMessagePromptTemplate:  如SystemMessagePromptTemplate、HumanMessagePromptTemplate、AIMessagePromptTemplate
 
-			f. PipelinePromptTemplate: 管道提示词模版，用于把几个提示词组合一起使用
+			f. PipelinePromptTemplate: 管道提示词模版，解决单一超大提示模版维护难的问题
+					用于将多个提示词模版 按顺序组合成处理管道 ，实现分阶段、模块化的提示构建。串联多个提示处理，实现复杂的提示生成逻辑
+					a. 将复杂的提示拆解为多个处理阶段，每个阶段使用独立的提示模版
+					b. 前一个模版的输出作为下一个模版的输入变量
 """
 
 # 1. 位置参数方式

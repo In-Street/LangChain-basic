@@ -44,10 +44,14 @@ os.environ['OPENAI_API_KEY'] = os.getenv('ZHIPUAI_API_KEY')
 os.environ['OPENAI_BASE_URL'] = os.getenv('ZHIPUAI_API_BASE')
 
 #使用OpenAI 来创建LLM对话模型实例，调用智谱
-open_ai_chat_model = ChatOpenAI(model='glm-4-flash-250414',
+open_ai_chat_model = ChatOpenAI(
+                                # model='glm-4-flash-250414',
                                 # api_key=os.getenv('ZHIPUAI_API_KEY'),  # 未设定时，会从环境变量中获取
                                 # base_url=os.getenv('ZHIPUAI_API_BASE'),
-                                max_tokens=300, temperature=0.8)
+                                model='Qwen/Qwen3-8B',
+                                api_key=os.getenv('GUIJI_API_KEY'),
+                                base_url=os.getenv('GUIJI_API_BASE'),
+                                max_tokens=20, temperature=0.8)
 
 # 返回结果类型： <class 'langchain_core.message.ai.AIMessage'>
 invoke_response = open_ai_chat_model.invoke('制定一份langchain的学习计划')
