@@ -1,6 +1,7 @@
 import os, dotenv
 from typing import Optional
-from langchain_openai import ChatOpenAI, OpenAI
+from langchain_openai import ChatOpenAI
+from openai import OpenAI
 import tiktoken
 
 dotenv.load_dotenv()
@@ -17,6 +18,14 @@ def get_chat_model(temperature: Optional[float] = None, max_tokens: Optional[int
 		streaming=streaming,
 		max_tokens=max_tokens,
 		# 使用Qwen3-8B 模型时，指定max_tokens无效，因为并没有实现OpenAI计算多轮对话token数的get_num_tokens_from_messages() 方法
+	)
+
+def get_model(temperature: Optional[float] = None, max_tokens: Optional[int] = None,
+                   streaming: Optional[bool] = False) -> OpenAI:
+
+	return OpenAI(
+		api_key=os.getenv('GUIJI_API_KEY'),
+		base_url=os.getenv('GUIJI_API_BASE'),
 	)
 
 
