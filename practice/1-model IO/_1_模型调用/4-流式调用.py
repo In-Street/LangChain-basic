@@ -26,7 +26,7 @@ chat_model = get_chat_model(max_tokens=100, streaming=True)
 # stream 方法进行调用
 invoke_response = chat_model.stream([
 	SystemMessage(content='你是一个大模型应用开发领域的专家'),
-	HumanMessage(content='帮我指定一份从Java开发转大模型应用开发的计划')])
+	HumanMessage(content='帮我指定一份从Java开发转大模型应用开发的计划，控制在100字以内')])
 
 # 循环输出每块内容
 for chunk in invoke_response:

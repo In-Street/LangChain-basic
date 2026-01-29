@@ -1,4 +1,6 @@
 """
+	.venv/lib/python3.12/site-packages/langchain/chains/__init__.py 文件中 描述了框架中所有的Chain
+
 	 Chain:  用于将多个组件（提示词模版、大模型、输出解析器、记忆、工具）连接起来，形成复用的工作流，完成复杂的任务
 	    1. 核心： 组合不同模块化单元
 	            LLM 与 PromptTemplate 结合、LLM 与 输出解析器 结合、LLM 与 外部数据 结合、LLM 与 长期记忆 结合
@@ -21,4 +23,5 @@
 		4. 文档链 - StuffDocumentsChain
 				将多个文档内容合并到单个prompt中，然后传递到LLM处理。
 				由于所有文档被完整拼接，LLM能同时看到全部内容，适合全局理解的任务，如：总结、问答、对比分析。适合处理 少量/中等长度文档
+
 """
